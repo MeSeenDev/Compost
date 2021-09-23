@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "260870484907",
+    "project_id": "compost-71325",
+    "storage_bucket": "compost-71325.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260870484907:android:f0643c9c317f5ce7cbd8ee",
+        "android_client_info": {
+          "package_name": "ru.meseen.dev.compost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260870484907-lpk9cgq5nc1okbdlea53amce170i6kau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByZfyQa1m0dd70NRO9jc-WOz_CvbudW44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260870484907-lpk9cgq5nc1okbdlea53amce170i6kau.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
