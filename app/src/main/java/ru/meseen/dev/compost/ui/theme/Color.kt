@@ -2,8 +2,9 @@ package ru.meseen.dev.compost.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
-val descColor = Color(0xFFA5A5A5)
+val greyDark= Color(0xFF2c0c04)
+val greyFull= Color(0xFF8d3811)
+val greyMid = Color(0xFF885E4A)
+val greyLight = Color(0xFFBE9C85)
+val greyWhite = Color(0xFFeeddd0)
+val accent = Color(0xFFe2b357)
