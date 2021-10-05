@@ -32,8 +32,6 @@ class MainActivity : ComponentActivity() {
 
     private val viewModel by viewModels<MainViewModel>()
 
-    private val data: MutableState<String> = mutableStateOf("")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -69,8 +67,8 @@ class MainActivity : ComponentActivity() {
                 Firebase.dynamicLinks
                     .getDynamicLink(lincIntent)
                     .addOnSuccessListener(this) { pendingDynamicLinkData ->
-                        pendingDynamicLinkData?.link?.let {
-                            viewModel.linc = it.toString()
+                        pendingDynamicLinkData.link?.let { uri ->
+                            viewModel.linc = uri.toString()
                         }
                     }
                     .addOnFailureListener(this) { e -> Log.w(TAG, "getDynamicLink:onFailure", e) }

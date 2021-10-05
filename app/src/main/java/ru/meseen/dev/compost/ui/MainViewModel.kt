@@ -8,14 +8,24 @@ import androidx.lifecycle.ViewModel
 /**
  * @author Vyacheslav Doroshenko
  */
-class MainViewModel(val stateHandle: SavedStateHandle) : ViewModel() {
+class MainViewModel(private val stateHandle: SavedStateHandle) : ViewModel() {
 
-    private val _lincData = MutableLiveData("Говно все это")
-     val lincData: LiveData<String> = _lincData
+    companion object {
+        const val SOME_KEY = "SOME_KEY"
+    }
 
-     var linc: String = ""
+    init {
+        if (!stateHandle.contains(SOME_KEY)) {
+            stateHandle.set(SOME_KEY, "Говно все это")
+        }
+    }
+
+    val lincData: LiveData<String> = stateHandle.getLiveData(SOME_KEY)
+
+    var linc: String = ""
         set(value) {
-            _lincData.postValue(value)
+            stateHandle.set(SOME_KEY, value)
             field = value
         }
+
 }
