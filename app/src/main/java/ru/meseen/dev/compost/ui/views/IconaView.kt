@@ -24,7 +24,7 @@ import ru.meseen.dev.compost.ui.theme.greyWhite
  * @author Vyacheslav Doroshenko
  */
 
-class IconaView {
+object IconaView {
 
 
     @Composable

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Compost">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.deep.DeepActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Compost.NoActionBar">
@@ -27,6 +27,17 @@
                 <data
                     android:host="https://learncompost.page.link"
                     android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.invite.InviteActivity"
+            android:exported="true"
+            android:label="@string/app_invite"
+            android:theme="@style/Theme.Compost.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

@@ -1,17 +1,16 @@
-package ru.meseen.dev.compost.ui
+package ru.meseen.dev.compost.ui.activities.deep
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
 /**
  * @author Vyacheslav Doroshenko
  */
-class MainViewModel(private val stateHandle: SavedStateHandle) : ViewModel() {
+class DeepViewModel(private val stateHandle: SavedStateHandle) : ViewModel() {
 
     companion object {
-        const val SOME_KEY = "SOME_KEY"
+        const val SOME_KEY = "SOME_DEEP_KEY"
     }
 
     init {
