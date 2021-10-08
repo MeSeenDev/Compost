@@ -29,7 +29,7 @@ class InviteActivity : ComponentActivity() {
         setContent {
             InviteView()
         }
-        viewModel.lincInvite.observe(this) { link ->
+        viewModel.liveData.observe(this) { link ->
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
             intent.putExtra(Intent.EXTRA_TEXT, link.toString())

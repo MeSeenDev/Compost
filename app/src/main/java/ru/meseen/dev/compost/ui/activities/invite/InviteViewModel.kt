@@ -4,16 +4,15 @@ import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import ru.meseen.dev.compost.ui.activities.base.BaseViewModel
 
 /**
  * @author Vyacheslav Doroshenko
  */
-class InviteViewModel (private val stateHandle: SavedStateHandle) : BaseViewModel() {
+class InviteViewModel (private val stateHandle: SavedStateHandle) : BaseViewModel<Uri>() {
 
-    override val lincInvite: LiveData<Uri> = MutableLiveData()
+    override val liveData: LiveData<Uri> = MutableLiveData()
 
     fun generateContentLink() {
         val baseUrl = Uri.parse("https://dev.meseen.ru/?page_id=574")
@@ -24,7 +23,6 @@ class InviteViewModel (private val stateHandle: SavedStateHandle) : BaseViewMode
             domainUriPrefix = domain
             //setAndroidParameters(DynamicLink.AndroidParameters.Builder("ru.meseen.dev.compost").build()) Если есть на GP
         }.buildDynamicLink()
-
-        (lincInvite as MutableLiveData).postValue(link.uri);
+        liveData.postValue(link.uri)
     }
 }
