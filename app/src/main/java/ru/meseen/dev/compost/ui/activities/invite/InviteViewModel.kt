@@ -18,11 +18,12 @@ class InviteViewModel (private val stateHandle: SavedStateHandle) : BaseViewMode
         val baseUrl = Uri.parse("https://dev.meseen.ru/?page_id=574")
         val domain = "https://learncompost.page.link"
 
-        val link = FirebaseDynamicLinks.getInstance().createDynamicLink().apply {
+        FirebaseDynamicLinks.getInstance().createDynamicLink().apply {
             link = baseUrl
             domainUriPrefix = domain
             //setAndroidParameters(DynamicLink.AndroidParameters.Builder("ru.meseen.dev.compost").build()) Если есть на GP
-        }.buildDynamicLink()
-        liveData.postValue(link.uri)
+        }.buildDynamicLink().also { link->
+            liveData.postValue(link.uri)
+        }
     }
 }

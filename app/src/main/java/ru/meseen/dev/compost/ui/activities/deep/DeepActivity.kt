@@ -70,9 +70,7 @@ class DeepActivity : ComponentActivity() {
                             viewModel.linc = uri.toString()
                         }
                         addOnFailureListener(this@DeepActivity) { e ->
-                            Log.w(TAG,
-                                "getDynamicLink:onFailure",
-                                e)
+                            Log.wtf(TAG, "getDynamicLink:onFailure", e)
                         }
                     }
                 }
